@@ -16,6 +16,7 @@ protocol CoordinatorProtocol {
 final class AppCoordinator: CoordinatorProtocol {
     var navigation: UINavigationController
     private let appFactory: AppFactoryProtocol
+    private var homeCoordinator: CoordinatorProtocol?
     
     init(navigation: UINavigationController, appFactory: AppFactoryProtocol, window: UIWindow?) {
         self.navigation = navigation
@@ -24,8 +25,8 @@ final class AppCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        let coordinator = appFactory.makeHomeCoordinator(navigation: navigation)
-        coordinator.start()
+        homeCoordinator = appFactory.makeHomeCoordinator(navigation: navigation)
+        homeCoordinator?.start()
     }
     
     private func configWindow(window: UIWindow?) {

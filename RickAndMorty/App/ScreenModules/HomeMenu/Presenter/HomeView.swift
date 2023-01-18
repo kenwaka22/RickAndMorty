@@ -8,10 +8,16 @@
 import UIKit
 import Combine
 
+//CoordinatorDelegate
+protocol HomeViewCoordinatorProtocol: AnyObject {
+    func didSelectedMenuCell(model: MenuItem)
+}
+
 final class HomeView: UIViewController {
     //MARK: - Attributes
     private let viewModel: HomeViewModelProtocol
     private var cancellable = Set<AnyCancellable>()
+    private weak var coordinator: HomeViewCoordinatorProtocol?
     
     //UI
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,8 +29,9 @@ final class HomeView: UIViewController {
     }
     
     //MARK: - Initializer
-    init(viewModel: HomeViewModelProtocol) {
+    init(viewModel: HomeViewModelProtocol, coordinator: HomeViewCoordinatorProtocol) {
         self.viewModel = viewModel
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
         
     }
@@ -49,7 +56,7 @@ final class HomeView: UIViewController {
                 case.loading:
                     self?.showSpinner()
                 case.fail(error: let error):
-                    self?.presentAlert(message: error, title: "Error")
+                    self?.presentAlert(message: error, title: AppLocalized.error)
                 }
             }.store(in: &cancellable)
     }
@@ -68,7 +75,13 @@ extension HomeView {
 }
 
 //MARK: - UICollectionViewDelegate
-extension HomeView: UICollectionViewDelegate {  }
+extension HomeView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let model = viewModel.getMenuItem(indexPath: indexPath )
+        coordinator?.didSelectedMenuCell(model: model )
+    }
+    
+}
 
 //MARK: - UICollectionViewDataSource
 extension HomeView: UICollectionViewDataSource {
@@ -94,13 +107,14 @@ extension HomeView: UICollectionViewDataSource {
 extension HomeView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //Para que entren 2 cells de manera horizontal
-        let width = (Int(view.frame.width) / 2) - 20
+        //let width = (Int(view.frame.width) / 2) - 20
+        let width = (ViewValues.widthScreen / 2) - ViewValues.doublePadding
         return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         //Espacio entre columnas de celdas (arriba abajo)
-        return 20
+        return ViewValues.doublePadding
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -110,7 +124,7 @@ extension HomeView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         //Para dar margenes al layout
-        return UIEdgeInsets(top: .zero, left: 10, bottom: .zero, right: 10)
+        return UIEdgeInsets(top: .zero, left: ViewValues.normalPadding, bottom: .zero, right: ViewValues.normalPadding)
     }
 }
 
@@ -120,9 +134,10 @@ extension HomeView: SpinnerDisplayProtocol {
 //    func hideSpinner()
 }
 
-//MARK: - Message
 extension HomeView: MessageDisplayProtocol {
 //    func presentAlert()
 }
+
+
 
 

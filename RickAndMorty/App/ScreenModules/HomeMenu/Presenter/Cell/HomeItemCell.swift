@@ -14,14 +14,14 @@ final class HomeItemCell: UICollectionViewCell {
     private let mainContainer: UIView = {
         let element = UIView()
         element.backgroundColor = .systemGroupedBackground
-        element.layer.cornerRadius = 10
+        element.layer.cornerRadius = ViewValues.defaultCornerRadius
         element.layer.masksToBounds = true //Para ver el radius cuando se ponga una imagen
         return element
     }()
     
     private let categoryImage: UIImageView = {
         let element = UIImageView()
-        element.image = ResourceImage.defaultImage
+        element.image = UIImage(named: Images.defaultImage )
         element.contentMode = .scaleAspectFill
         return element
     }()
@@ -29,9 +29,7 @@ final class HomeItemCell: UICollectionViewCell {
     private let titleCategoryLabel: UILabel = {
         let element = UILabel()
         element.textColor = .white
-        element.text = "Category"
         element.font = UIFont.preferredFont(forTextStyle: .headline)
-
         return element
     }()
     
@@ -61,16 +59,16 @@ final class HomeItemCell: UICollectionViewCell {
             right: mainContainer.rightAnchor,
             bottom: mainContainer.bottomAnchor,
             left: mainContainer.leftAnchor,
-            pRight: 10,
-            pBottom: 10,
-            pLeft: 10)
+            pRight: ViewValues.normalPadding,
+            pBottom: ViewValues.normalPadding,
+            pLeft: ViewValues.normalPadding)
     }
     
     private func setupGradientForTitle() {
         let gradientMaskLayer = CAGradientLayer()
         gradientMaskLayer.frame = self.bounds
         gradientMaskLayer.colors = [UIColor.clear.cgColor, UIColor.darkGray.cgColor]
-        gradientMaskLayer.locations = [0.6, 0.9]
+        gradientMaskLayer.locations = ViewValues.gradientLocations
         mainContainer.layer.addSublayer(gradientMaskLayer)
     }
     

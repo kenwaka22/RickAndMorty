@@ -9,20 +9,27 @@ import UIKit
 import Combine
 
 protocol HomeFactoryProtocol {
-    func makeModule() -> UIViewController
+    func makeModule(coordinator: HomeViewCoordinatorProtocol) -> UIViewController
+    func makeCharactersCoordinator(navigation: UINavigationController, urlList: String) -> CoordinatorProtocol
 }
 
 struct HomeFactory: HomeFactoryProtocol {
-    func makeModule() -> UIViewController {
+    func makeModule(coordinator: HomeViewCoordinatorProtocol) -> UIViewController {
         //Inyectamos las dependencias
         let apiClientService = ApiClienteService()
         let menuRepository = MenuRepository(apiClientService: apiClientService , urlList: EndPoing.baseURL)
         let loadUseCase = LoadMenuUseCase(menuRepository: menuRepository)
         let state = PassthroughSubject<StateController, Never>()
         let viewModel: HomeViewModelProtocol = HomeViewModel(state: state, loadMenuUseCase: loadUseCase)
-        let viewController = HomeView(viewModel: viewModel)
-        viewController.title = "Rick and Morty"
+        let viewController = HomeView(viewModel: viewModel, coordinator: coordinator)
+        viewController.title = AppLocalized.appName
         
         return viewController
+    }
+    
+    func makeCharactersCoordinator(navigation: UINavigationController, urlList: String) -> CoordinatorProtocol {
+        let charactersFactory = CharactersFactory()
+        let charactersCoordinator = CharactersCoordinator(navigation: navigation, factory: charactersFactory)
+        return charactersCoordinator
     }
 }

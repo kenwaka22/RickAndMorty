@@ -12,7 +12,7 @@
 		C33C772529759A5A002FDD22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33C772429759A5A002FDD22 /* Assets.xcassets */; };
 		C33C772829759A5A002FDD22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33C772629759A5A002FDD22 /* LaunchScreen.storyboard */; };
 		C33C773329759A5A002FDD22 /* RickAndMortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C773229759A5A002FDD22 /* RickAndMortyTests.swift */; };
-		C33C776C2975A76C002FDD22 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C776B2975A76C002FDD22 /* Coordinator.swift */; };
+		C33C776C2975A76C002FDD22 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C776B2975A76C002FDD22 /* AppCoordinator.swift */; };
 		C33C776E2975A81C002FDD22 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C776D2975A81C002FDD22 /* AppFactory.swift */; };
 		C33C777029760B41002FDD22 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C776F29760B41002FDD22 /* HomeCoordinator.swift */; };
 		C33C777229760B9E002FDD22 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C777129760B9E002FDD22 /* HomeFactory.swift */; };
@@ -21,7 +21,7 @@
 		C33C777C29763BB8002FDD22 /* HomeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C777B29763BB8002FDD22 /* HomeItemCell.swift */; };
 		C33C777E29763D19002FDD22 /* UIView+Contraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C777D29763D19002FDD22 /* UIView+Contraints.swift */; };
 		C33C778029763F7B002FDD22 /* ReuseIdentifierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C777F29763F7B002FDD22 /* ReuseIdentifierCell.swift */; };
-		C33C778229764715002FDD22 /* ResourceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C778129764715002FDD22 /* ResourceImage.swift */; };
+		C33C778229764715002FDD22 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C778129764715002FDD22 /* Images.swift */; };
 		C33C77882976F4A2002FDD22 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77872976F4A2002FDD22 /* MenuItem.swift */; };
 		C33C778B2976F503002FDD22 /* MenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C778A2976F503002FDD22 /* MenuRepository.swift */; };
 		C33C778E2976F605002FDD22 /* LoadMenuUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C778D2976F605002FDD22 /* LoadMenuUseCase.swift */; };
@@ -38,6 +38,11 @@
 		C33C77AC297848B9002FDD22 /* SpinnerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77AB297848B9002FDD22 /* SpinnerDisplay.swift */; };
 		C33C77AF29784922002FDD22 /* ViewValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77AE29784922002FDD22 /* ViewValues.swift */; };
 		C33C77B129784949002FDD22 /* MessageDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77B029784949002FDD22 /* MessageDisplay.swift */; };
+		C33C77B329785647002FDD22 /* AppLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77B229785647002FDD22 /* AppLocalized.swift */; };
+		C33C77B529785E28002FDD22 /* CharactersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77B429785E28002FDD22 /* CharactersFactory.swift */; };
+		C33C77B929785F41002FDD22 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77B729785F41002FDD22 /* CharactersView.swift */; };
+		C33C77BA29785F41002FDD22 /* CharactersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33C77B829785F41002FDD22 /* CharactersView.xib */; };
+		C33C77BC29785FB3002FDD22 /* CharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77BB29785FB3002FDD22 /* CharactersCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +72,7 @@
 		C33C772E29759A5A002FDD22 /* RickAndMortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33C773229759A5A002FDD22 /* RickAndMortyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyTests.swift; sourceTree = "<group>"; };
 		C33C773829759A5A002FDD22 /* RickAndMortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C33C776B2975A76C002FDD22 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C33C776B2975A76C002FDD22 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C33C776D2975A81C002FDD22 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		C33C776F29760B41002FDD22 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		C33C777129760B9E002FDD22 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
@@ -76,7 +81,7 @@
 		C33C777B29763BB8002FDD22 /* HomeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemCell.swift; sourceTree = "<group>"; };
 		C33C777D29763D19002FDD22 /* UIView+Contraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Contraints.swift"; sourceTree = "<group>"; };
 		C33C777F29763F7B002FDD22 /* ReuseIdentifierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierCell.swift; sourceTree = "<group>"; };
-		C33C778129764715002FDD22 /* ResourceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceImage.swift; sourceTree = "<group>"; };
+		C33C778129764715002FDD22 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		C33C77872976F4A2002FDD22 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		C33C778A2976F503002FDD22 /* MenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRepository.swift; sourceTree = "<group>"; };
 		C33C778D2976F605002FDD22 /* LoadMenuUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMenuUseCase.swift; sourceTree = "<group>"; };
@@ -93,6 +98,11 @@
 		C33C77AB297848B9002FDD22 /* SpinnerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerDisplay.swift; sourceTree = "<group>"; };
 		C33C77AE29784922002FDD22 /* ViewValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewValues.swift; sourceTree = "<group>"; };
 		C33C77B029784949002FDD22 /* MessageDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplay.swift; sourceTree = "<group>"; };
+		C33C77B229785647002FDD22 /* AppLocalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocalized.swift; sourceTree = "<group>"; };
+		C33C77B429785E28002FDD22 /* CharactersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersFactory.swift; sourceTree = "<group>"; };
+		C33C77B729785F41002FDD22 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
+		C33C77B829785F41002FDD22 /* CharactersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersView.xib; sourceTree = "<group>"; };
+		C33C77BB29785FB3002FDD22 /* CharactersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +210,6 @@
 			children = (
 				C33C77AA29784896002FDD22 /* Components */,
 				C33C77622975A592002FDD22 /* Localize */,
-				C33C77612975A580002FDD22 /* StateController */,
 				C33C77602975A560002FDD22 /* Utils */,
 				C33C775C2975A51E002FDD22 /* Layers */,
 				C33C775A2975A4F3002FDD22 /* Constants */,
@@ -224,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				C33C772429759A5A002FDD22 /* Assets.xcassets */,
+				C33C778129764715002FDD22 /* Images.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -248,6 +258,7 @@
 		C33C77532975A446002FDD22 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				C33C77B629785F24002FDD22 /* Presenter */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -337,8 +348,8 @@
 		C33C775F2975A535002FDD22 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C33C77612975A580002FDD22 /* StateController */,
 				C33C775B2975A50B002FDD22 /* Components */,
-				C33C77952977536D002FDD22 /* StateController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -347,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				C33C777F29763F7B002FDD22 /* ReuseIdentifierCell.swift */,
-				C33C778129764715002FDD22 /* ResourceImage.swift */,
 				C33C77A629782D7E002FDD22 /* PropertyIterator.swift */,
 			);
 			path = Utils;
@@ -356,6 +366,7 @@
 		C33C77612975A580002FDD22 /* StateController */ = {
 			isa = PBXGroup;
 			children = (
+				C33C77952977536D002FDD22 /* StateController.swift */,
 			);
 			path = StateController;
 			sourceTree = "<group>";
@@ -363,6 +374,7 @@
 		C33C77622975A592002FDD22 /* Localize */ = {
 			isa = PBXGroup;
 			children = (
+				C33C77B229785647002FDD22 /* AppLocalized.swift */,
 			);
 			path = Localize;
 			sourceTree = "<group>";
@@ -372,7 +384,7 @@
 			children = (
 				C33C77662975A5F1002FDD22 /*  CoordinatorScreens */,
 				C33C77642975A5E4002FDD22 /* Utils */,
-				C33C776B2975A76C002FDD22 /* Coordinator.swift */,
+				C33C776B2975A76C002FDD22 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -388,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				C33C776F29760B41002FDD22 /* HomeCoordinator.swift */,
+				C33C77BB29785FB3002FDD22 /* CharactersCoordinator.swift */,
 			);
 			path = " CoordinatorScreens";
 			sourceTree = "<group>";
@@ -397,6 +410,7 @@
 			children = (
 				C33C776D2975A81C002FDD22 /* AppFactory.swift */,
 				C33C777129760B9E002FDD22 /* HomeFactory.swift */,
+				C33C77B429785E28002FDD22 /* CharactersFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -529,6 +543,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		C33C77B629785F24002FDD22 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C33C77B729785F41002FDD22 /* CharactersView.swift */,
+				C33C77B829785F41002FDD22 /* CharactersView.xib */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -635,6 +658,7 @@
 			files = (
 				C33C772829759A5A002FDD22 /* LaunchScreen.storyboard in Resources */,
 				C33C772529759A5A002FDD22 /* Assets.xcassets in Resources */,
+				C33C77BA29785F41002FDD22 /* CharactersView.xib in Resources */,
 				C33C777A2976336A002FDD22 /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,9 +686,10 @@
 			files = (
 				C33C77B129784949002FDD22 /* MessageDisplay.swift in Sources */,
 				C33C777C29763BB8002FDD22 /* HomeItemCell.swift in Sources */,
-				C33C776C2975A76C002FDD22 /* Coordinator.swift in Sources */,
+				C33C776C2975A76C002FDD22 /* AppCoordinator.swift in Sources */,
 				C33C77A229782C6F002FDD22 /* MenuDTO.swift in Sources */,
 				C33C779429770D4E002FDD22 /* HomeItemCellViewModel.swift in Sources */,
+				C33C77B329785647002FDD22 /* AppLocalized.swift in Sources */,
 				C33C77AC297848B9002FDD22 /* SpinnerDisplay.swift in Sources */,
 				C33C778E2976F605002FDD22 /* LoadMenuUseCase.swift in Sources */,
 				C33C77922976F78C002FDD22 /* HomeViewModel.swift in Sources */,
@@ -679,14 +704,17 @@
 				C33C77A729782D7E002FDD22 /* PropertyIterator.swift in Sources */,
 				C33C779C297798FC002FDD22 /* ApiError.swift in Sources */,
 				C33C771E29759A58002FDD22 /* SceneDelegate.swift in Sources */,
+				C33C77BC29785FB3002FDD22 /* CharactersCoordinator.swift in Sources */,
 				C33C77AF29784922002FDD22 /* ViewValues.swift in Sources */,
 				C33C77962977536D002FDD22 /* StateController.swift in Sources */,
 				C33C77A929783237002FDD22 /* EndPoint.swift in Sources */,
 				C33C77792976336A002FDD22 /* HomeView.swift in Sources */,
-				C33C778229764715002FDD22 /* ResourceImage.swift in Sources */,
+				C33C778229764715002FDD22 /* Images.swift in Sources */,
 				C33C779F297827BF002FDD22 /* HttpStatusResponse.swift in Sources */,
+				C33C77B929785F41002FDD22 /* CharactersView.swift in Sources */,
 				C33C776E2975A81C002FDD22 /* AppFactory.swift in Sources */,
 				C33C777029760B41002FDD22 /* HomeCoordinator.swift in Sources */,
+				C33C77B529785E28002FDD22 /* CharactersFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
