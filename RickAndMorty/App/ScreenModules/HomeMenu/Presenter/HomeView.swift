@@ -41,14 +41,15 @@ final class HomeView: UIViewController {
     private func stateController() {
         viewModel.state
             .receive(on: RunLoop.main) // Para que se ejecute en el hilo principal
-            .sink { state in
+            .sink { [weak self] state in
+                self?.hideSpinner()
                 switch state {
                 case.success:
-                    self.collectionView.reloadData()
+                    self?.collectionView.reloadData()
                 case.loading:
-                    print("Loading...")
+                    self?.showSpinner()
                 case.fail(error: let error):
-                    print(error)
+                    self?.presentAlert(message: error, title: "Error")
                 }
             }.store(in: &cancellable)
     }
@@ -112,3 +113,16 @@ extension HomeView: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: .zero, left: 10, bottom: .zero, right: 10)
     }
 }
+
+//MARK: - Activity indicator
+extension HomeView: SpinnerDisplayProtocol {
+//    func showSpinner()
+//    func hideSpinner()
+}
+
+//MARK: - Message
+extension HomeView: MessageDisplayProtocol {
+//    func presentAlert()
+}
+
+

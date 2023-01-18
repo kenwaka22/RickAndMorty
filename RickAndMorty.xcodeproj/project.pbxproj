@@ -35,6 +35,9 @@
 		C33C77A529782D18002FDD22 /* MenuDTO+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77A429782D18002FDD22 /* MenuDTO+Mapper.swift */; };
 		C33C77A729782D7E002FDD22 /* PropertyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77A629782D7E002FDD22 /* PropertyIterator.swift */; };
 		C33C77A929783237002FDD22 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77A829783237002FDD22 /* EndPoint.swift */; };
+		C33C77AC297848B9002FDD22 /* SpinnerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77AB297848B9002FDD22 /* SpinnerDisplay.swift */; };
+		C33C77AF29784922002FDD22 /* ViewValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77AE29784922002FDD22 /* ViewValues.swift */; };
+		C33C77B129784949002FDD22 /* MessageDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77B029784949002FDD22 /* MessageDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		C33C77A429782D18002FDD22 /* MenuDTO+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuDTO+Mapper.swift"; sourceTree = "<group>"; };
 		C33C77A629782D7E002FDD22 /* PropertyIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyIterator.swift; sourceTree = "<group>"; };
 		C33C77A829783237002FDD22 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		C33C77AB297848B9002FDD22 /* SpinnerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerDisplay.swift; sourceTree = "<group>"; };
+		C33C77AE29784922002FDD22 /* ViewValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewValues.swift; sourceTree = "<group>"; };
+		C33C77B029784949002FDD22 /* MessageDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,7 @@
 		C33C774E2975A2C8002FDD22 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				C33C77AA29784896002FDD22 /* Components */,
 				C33C77622975A592002FDD22 /* Localize */,
 				C33C77612975A580002FDD22 /* StateController */,
 				C33C77602975A560002FDD22 /* Utils */,
@@ -291,6 +298,7 @@
 		C33C775A2975A4F3002FDD22 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				C33C77AE29784922002FDD22 /* ViewValues.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -512,6 +520,15 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
+		C33C77AA29784896002FDD22 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C33C77AB297848B9002FDD22 /* SpinnerDisplay.swift */,
+				C33C77B029784949002FDD22 /* MessageDisplay.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -643,10 +660,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33C77B129784949002FDD22 /* MessageDisplay.swift in Sources */,
 				C33C777C29763BB8002FDD22 /* HomeItemCell.swift in Sources */,
 				C33C776C2975A76C002FDD22 /* Coordinator.swift in Sources */,
 				C33C77A229782C6F002FDD22 /* MenuDTO.swift in Sources */,
 				C33C779429770D4E002FDD22 /* HomeItemCellViewModel.swift in Sources */,
+				C33C77AC297848B9002FDD22 /* SpinnerDisplay.swift in Sources */,
 				C33C778E2976F605002FDD22 /* LoadMenuUseCase.swift in Sources */,
 				C33C77922976F78C002FDD22 /* HomeViewModel.swift in Sources */,
 				C33C778B2976F503002FDD22 /* MenuRepository.swift in Sources */,
@@ -660,6 +679,7 @@
 				C33C77A729782D7E002FDD22 /* PropertyIterator.swift in Sources */,
 				C33C779C297798FC002FDD22 /* ApiError.swift in Sources */,
 				C33C771E29759A58002FDD22 /* SceneDelegate.swift in Sources */,
+				C33C77AF29784922002FDD22 /* ViewValues.swift in Sources */,
 				C33C77962977536D002FDD22 /* StateController.swift in Sources */,
 				C33C77A929783237002FDD22 /* EndPoint.swift in Sources */,
 				C33C77792976336A002FDD22 /* HomeView.swift in Sources */,

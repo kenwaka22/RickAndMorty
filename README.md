@@ -4,8 +4,7 @@
  - Libraries: Combine
  - UI: XIBs and programmatic view. No storyboards
  - APIRest: [RickAndMorty](https://rickandmortyapi.com/documentation)
- - Others: Generic URLSession with async, Factory, Dependency injection
- 
+ - Others: Generic URLSession with async and await, Factory, Dependency injection
  
 ## Demo
 | Home |
