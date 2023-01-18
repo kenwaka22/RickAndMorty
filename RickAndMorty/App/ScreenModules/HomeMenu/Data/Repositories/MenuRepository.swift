@@ -12,7 +12,14 @@ protocol MenuRepositoryProtocol {
 }
 
 struct MenuRepository: MenuRepositoryProtocol {
+    
+    let apiClientService: ApiClienteServiceProtocol
+    let urlList: String
+    
     func fetchMenuData() async throws -> [MenuItem] {
-        [MenuItem(title: "Category", url: "")]
+        
+        let url = URL(string: urlList)
+        
+        return try await  apiClientService.request(url: url, type: MenuDTO.self).toDomain()
     }
 }

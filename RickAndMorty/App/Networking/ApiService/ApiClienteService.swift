@@ -8,7 +8,9 @@
 import Foundation
 
 protocol ApiClienteServiceProtocol {
-    func request<T: Decodable>(url: URL?, type: T.Type, completion: @escaping (Result<T, Error>) -> Void )
+    func requestWithEscaping<T: Decodable>(url: URL?, type: T.Type, completion: @escaping (Result<T, Error>) -> Void )
+    
+    func request<T: Decodable>(url: URL?, type: T.Type) async throws -> T
 }
 
 struct ApiClienteService: ApiClienteServiceProtocol {
@@ -18,7 +20,8 @@ struct ApiClienteService: ApiClienteServiceProtocol {
         self.session = session
     }
     
-    func request<T>(url: URL?, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
+    //MARK: - Reques with Closure
+    func requestWithEscaping<T>(url: URL?, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
         //Validamos la URL
         guard let url = url else {
             completion(.failure(ApiError.urlError))
@@ -57,12 +60,39 @@ struct ApiClienteService: ApiClienteServiceProtocol {
         }.resume()
     }
     
-//    func request<T>(url: URL?, type: T.Type) async throws -> T where T : Decodable {
-//        guard let url = url else { throw ApiError.urlError }
-//        let (data: Data, httpResponse: URLResponse) = await try session.data(from: url)
-//    }
-//
-//    private func makeRequest() {
-//
-//    }
+    //MARK: - Reques with async
+    func request<T: Decodable>(url: URL?, type: T.Type) async throws -> T {
+        guard let url = url else { throw ApiError.urlError }
+        return try await makeRequest(url: url)
+    }
+    
+    private func makeRequest<T: Decodable>(url: URL) async throws -> T {
+        let request = try await session.data(from: url)
+        return try validateResponse(request:request)
+    }
+    
+    private func validateResponse<T: Decodable>(
+        request: (data: Data, httpResponse: URLResponse)
+    ) throws -> T {
+        guard let httpResponse = request.httpResponse as? HTTPURLResponse
+        else { throw ApiError.unknownError }
+        
+        switch httpResponse.statusCode {
+        case HttpStatusResponse.ok:
+            return try decodeModel(data: request.data)
+        case HttpStatusResponse.clientError:
+            throw ApiError.clienteError
+        case HttpStatusResponse.serverError:
+            throw ApiError.serverError
+        default:
+            throw ApiError.unknownError
+        }
+    }
+    
+    private func decodeModel<T: Decodable>(data: Data) throws -> T {
+        let decoder = JSONDecoder()
+        let model = try? decoder.decode(T.self, from: data)
+        guard let model = model else { throw ApiError.decodingError }
+        return model
+    }
 }

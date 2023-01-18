@@ -15,7 +15,8 @@ protocol HomeFactoryProtocol {
 struct HomeFactory: HomeFactoryProtocol {
     func makeModule() -> UIViewController {
         //Inyectamos las dependencias
-        let menuRepository = MenuRepository()
+        let apiClientService = ApiClienteService()
+        let menuRepository = MenuRepository(apiClientService: apiClientService , urlList: EndPoing.baseURL)
         let loadUseCase = LoadMenuUseCase(menuRepository: menuRepository)
         let state = PassthroughSubject<StateController, Never>()
         let viewModel: HomeViewModelProtocol = HomeViewModel(state: state, loadMenuUseCase: loadUseCase)
