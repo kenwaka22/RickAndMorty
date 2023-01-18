@@ -18,6 +18,7 @@ struct CharactersFactory: CharactersFactoryProtocol {
         let state = PassthroughSubject<StateController, Never>()
         let viewController = CharactersView(coordinator: coordinator)
         viewController.navigationController?.navigationBar.prefersLargeTitles = true
+        viewController.title = "Characters"
         return viewController
     }
 }

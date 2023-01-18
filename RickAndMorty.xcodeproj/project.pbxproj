@@ -43,6 +43,14 @@
 		C33C77B929785F41002FDD22 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77B729785F41002FDD22 /* CharactersView.swift */; };
 		C33C77BA29785F41002FDD22 /* CharactersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33C77B829785F41002FDD22 /* CharactersView.xib */; };
 		C33C77BC29785FB3002FDD22 /* CharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77BB29785FB3002FDD22 /* CharactersCoordinator.swift */; };
+		C33C77BE2978927C002FDD22 /* LocationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77BD2978927C002FDD22 /* LocationsFactory.swift */; };
+		C33C77C3297892E1002FDD22 /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77C1297892E1002FDD22 /* EpisodesView.swift */; };
+		C33C77C4297892E1002FDD22 /* EpisodesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33C77C2297892E1002FDD22 /* EpisodesView.xib */; };
+		C33C77C729789312002FDD22 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77C529789312002FDD22 /* LocationsView.swift */; };
+		C33C77C829789312002FDD22 /* LocationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33C77C629789312002FDD22 /* LocationsView.xib */; };
+		C33C77CA297893E7002FDD22 /* EpisodesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77C9297893E7002FDD22 /* EpisodesFactory.swift */; };
+		C33C77CD2978958B002FDD22 /* LocationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77CC2978958B002FDD22 /* LocationsCoordinator.swift */; };
+		C33C77CF29789620002FDD22 /* EpisodesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33C77CE29789620002FDD22 /* EpisodesCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +111,14 @@
 		C33C77B729785F41002FDD22 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 		C33C77B829785F41002FDD22 /* CharactersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersView.xib; sourceTree = "<group>"; };
 		C33C77BB29785FB3002FDD22 /* CharactersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCoordinator.swift; sourceTree = "<group>"; };
+		C33C77BD2978927C002FDD22 /* LocationsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsFactory.swift; sourceTree = "<group>"; };
+		C33C77C1297892E1002FDD22 /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
+		C33C77C2297892E1002FDD22 /* EpisodesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesView.xib; sourceTree = "<group>"; };
+		C33C77C529789312002FDD22 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		C33C77C629789312002FDD22 /* LocationsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationsView.xib; sourceTree = "<group>"; };
+		C33C77C9297893E7002FDD22 /* EpisodesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesFactory.swift; sourceTree = "<group>"; };
+		C33C77CC2978958B002FDD22 /* LocationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsCoordinator.swift; sourceTree = "<group>"; };
+		C33C77CE29789620002FDD22 /* EpisodesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +289,7 @@
 		C33C77552975A478002FDD22 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				C33C77BF297892C2002FDD22 /* Presenter */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -280,6 +297,7 @@
 		C33C77562975A485002FDD22 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				C33C77C0297892CE002FDD22 /* Presenter */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -401,6 +419,8 @@
 			children = (
 				C33C776F29760B41002FDD22 /* HomeCoordinator.swift */,
 				C33C77BB29785FB3002FDD22 /* CharactersCoordinator.swift */,
+				C33C77CC2978958B002FDD22 /* LocationsCoordinator.swift */,
+				C33C77CE29789620002FDD22 /* EpisodesCoordinator.swift */,
 			);
 			path = " CoordinatorScreens";
 			sourceTree = "<group>";
@@ -411,6 +431,8 @@
 				C33C776D2975A81C002FDD22 /* AppFactory.swift */,
 				C33C777129760B9E002FDD22 /* HomeFactory.swift */,
 				C33C77B429785E28002FDD22 /* CharactersFactory.swift */,
+				C33C77BD2978927C002FDD22 /* LocationsFactory.swift */,
+				C33C77C9297893E7002FDD22 /* EpisodesFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -552,6 +574,24 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		C33C77BF297892C2002FDD22 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C33C77C529789312002FDD22 /* LocationsView.swift */,
+				C33C77C629789312002FDD22 /* LocationsView.xib */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C33C77C0297892CE002FDD22 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C33C77C1297892E1002FDD22 /* EpisodesView.swift */,
+				C33C77C2297892E1002FDD22 /* EpisodesView.xib */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -656,8 +696,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33C77C4297892E1002FDD22 /* EpisodesView.xib in Resources */,
 				C33C772829759A5A002FDD22 /* LaunchScreen.storyboard in Resources */,
 				C33C772529759A5A002FDD22 /* Assets.xcassets in Resources */,
+				C33C77C829789312002FDD22 /* LocationsView.xib in Resources */,
 				C33C77BA29785F41002FDD22 /* CharactersView.xib in Resources */,
 				C33C777A2976336A002FDD22 /* HomeView.xib in Resources */,
 			);
@@ -687,24 +729,30 @@
 				C33C77B129784949002FDD22 /* MessageDisplay.swift in Sources */,
 				C33C777C29763BB8002FDD22 /* HomeItemCell.swift in Sources */,
 				C33C776C2975A76C002FDD22 /* AppCoordinator.swift in Sources */,
+				C33C77CA297893E7002FDD22 /* EpisodesFactory.swift in Sources */,
 				C33C77A229782C6F002FDD22 /* MenuDTO.swift in Sources */,
 				C33C779429770D4E002FDD22 /* HomeItemCellViewModel.swift in Sources */,
 				C33C77B329785647002FDD22 /* AppLocalized.swift in Sources */,
+				C33C77CF29789620002FDD22 /* EpisodesCoordinator.swift in Sources */,
 				C33C77AC297848B9002FDD22 /* SpinnerDisplay.swift in Sources */,
+				C33C77CD2978958B002FDD22 /* LocationsCoordinator.swift in Sources */,
 				C33C778E2976F605002FDD22 /* LoadMenuUseCase.swift in Sources */,
 				C33C77922976F78C002FDD22 /* HomeViewModel.swift in Sources */,
 				C33C778B2976F503002FDD22 /* MenuRepository.swift in Sources */,
 				C33C7799297761CB002FDD22 /* ApiClienteService.swift in Sources */,
+				C33C77C729789312002FDD22 /* LocationsView.swift in Sources */,
 				C33C778029763F7B002FDD22 /* ReuseIdentifierCell.swift in Sources */,
 				C33C777E29763D19002FDD22 /* UIView+Contraints.swift in Sources */,
 				C33C777229760B9E002FDD22 /* HomeFactory.swift in Sources */,
 				C33C77882976F4A2002FDD22 /* MenuItem.swift in Sources */,
+				C33C77C3297892E1002FDD22 /* EpisodesView.swift in Sources */,
 				C33C771C29759A58002FDD22 /* AppDelegate.swift in Sources */,
 				C33C77A529782D18002FDD22 /* MenuDTO+Mapper.swift in Sources */,
 				C33C77A729782D7E002FDD22 /* PropertyIterator.swift in Sources */,
 				C33C779C297798FC002FDD22 /* ApiError.swift in Sources */,
 				C33C771E29759A58002FDD22 /* SceneDelegate.swift in Sources */,
 				C33C77BC29785FB3002FDD22 /* CharactersCoordinator.swift in Sources */,
+				C33C77BE2978927C002FDD22 /* LocationsFactory.swift in Sources */,
 				C33C77AF29784922002FDD22 /* ViewValues.swift in Sources */,
 				C33C77962977536D002FDD22 /* StateController.swift in Sources */,
 				C33C77A929783237002FDD22 /* EndPoint.swift in Sources */,

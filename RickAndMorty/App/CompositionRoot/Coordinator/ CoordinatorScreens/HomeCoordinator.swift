@@ -9,7 +9,7 @@ import UIKit
 
 final class HomeCoordinator: CoordinatorProtocol {
     var navigation: UINavigationController
-    private let homeFactory: HomeFactoryProtocol 
+    private let homeFactory: HomeFactoryProtocol
     
     init(navigation: UINavigationController, homeFactory: HomeFactoryProtocol) {
         self.navigation = navigation
@@ -17,8 +17,8 @@ final class HomeCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        let vc = homeFactory.makeModule(coordinator: self)
-        navigation.pushViewController(vc, animated: true)
+        let viewController = homeFactory.makeModule(coordinator: self)
+        navigation.pushViewController(viewController, animated: true)
     }
 }
 
@@ -28,9 +28,9 @@ extension HomeCoordinator: HomeViewCoordinatorProtocol {
         case "characters":
             navigateToCharacters(urlList: model.url)
         case "episodes":
-            navigateToEpisodes()
+            navigateToEpisodes(urlList: model.url)
         case "locations":
-            navigateToLocations()
+            navigateToLocations(urlList: model.url)
         default:
             break
         }
@@ -42,12 +42,16 @@ extension HomeCoordinator: HomeViewCoordinatorProtocol {
         charactersCoordinator.start()
     }
     
-    private func navigateToEpisodes() {
+    private func navigateToEpisodes(urlList: String) {
         print("Episodes")
+        let episodesCoordinator = homeFactory.makeEpisodesCoordinator(navigation: navigation, urlList: urlList)
+        episodesCoordinator.start()
 
     }
     
-    private func navigateToLocations() {
+    private func navigateToLocations(urlList: String) {
         print("Locations")
+        let locationsCoordinator = homeFactory.makeLocationsCoordinator(navigation: navigation, urlList: urlList)
+        locationsCoordinator.start()
     }
 }
