@@ -37,20 +37,17 @@ extension HomeCoordinator: HomeViewCoordinatorProtocol {
     }
     
     private func navigateToCharacters(urlList: String) {
-        print("Characters")
         let charactersCoordinator = homeFactory.makeCharactersCoordinator(navigation: navigation, urlList: urlList)
         charactersCoordinator.start()
     }
     
     private func navigateToEpisodes(urlList: String) {
-        print("Episodes")
         let episodesCoordinator = homeFactory.makeEpisodesCoordinator(navigation: navigation, urlList: urlList)
         episodesCoordinator.start()
 
     }
     
     private func navigateToLocations(urlList: String) {
-        print("Locations")
         let locationsCoordinator = homeFactory.makeLocationsCoordinator(navigation: navigation, urlList: urlList)
         locationsCoordinator.start()
     }

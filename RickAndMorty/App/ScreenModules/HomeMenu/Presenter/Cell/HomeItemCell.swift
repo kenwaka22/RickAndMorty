@@ -9,7 +9,6 @@ import UIKit
 
 final class HomeItemCell: UICollectionViewCell {
     
-    
     //MARK: - Attributes    
     private let mainContainer: UIView = {
         let element = UIView()

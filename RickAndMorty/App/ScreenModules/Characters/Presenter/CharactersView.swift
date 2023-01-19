@@ -12,9 +12,13 @@ protocol CharactersViewCoordinatorProtocol {
 }
 
 final class CharactersView: UIViewController {
-    
+    //MARK: - Attribues
     private let coordinator: CharactersViewCoordinatorProtocol?
+
+    //UI
+    @IBOutlet private weak var tableView: UITableView!
     
+    //MARK: - Initializer
     init(coordinator: CharactersViewCoordinatorProtocol) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
@@ -24,21 +28,40 @@ final class CharactersView: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Methods
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(CharacterItemCell.self, forCellReuseIdentifier: CharacterItemCell.reuseIdentifier)
+        tableView.separatorStyle = .none
+    }
+}
+
+//MARK: - Lifecycle
+extension CharactersView {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupTableView()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+//MARK: - Extensions
+extension CharactersView: UITableViewDelegate {}
+extension CharactersView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CharacterItemCell.reuseIdentifier, for: indexPath) as? CharacterItemCell
+        
+        guard let cell = cell else {
+            fatalError("No se ha identificado: CharacterItemCell")
+        }
+        
+        cell.backgroundColor = .red
+        
+        return cell
+    }
+}
+
